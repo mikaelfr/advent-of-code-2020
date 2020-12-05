@@ -33,7 +33,7 @@ class PassParser:
         return in_str
         
 
-result1 = max([bpass['sid'] for bpass in PassParser().passes])
+result1 = [bpass['sid'] for bpass in PassParser().passes][-1]
 result2 = [pair[1]['sid']-1 for pair in PassParser().get_adjacent_pairs() if pair[0]['sid'] + 2 == pair[1]['sid']][0]
 
 print(result1)
