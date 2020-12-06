@@ -1,4 +1,3 @@
-from functools import reduce
 from operator import itemgetter
 from fetch import AdventCalendar
 
@@ -17,9 +16,7 @@ class PassParser:
         ], key=itemgetter('sid'))
 
     def get_adjacent_pairs(self):
-        i = 0
-        for _ in range(len(self.passes) - 1):
-            i += 1
+        for i in range(len(self.passes) - 1):
             yield (self.passes[i-1], self.passes[i])
 
     @staticmethod
